@@ -7,7 +7,7 @@ Created on Sat Dec  5 15:58:40 2020
 
 import numpy as np
 
-with open("input/day3.txt") as file:
+with open("input/day03.txt") as file:
     terrain = np.array((list(map(list, file.readlines()))))
 
 

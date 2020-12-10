@@ -5,7 +5,7 @@ Created on Sat Dec  5 13:29:00 2020
 @author: Andreas J. P.
 """
 
-with open("input/day1.txt") as file:
+with open("input/day01.txt") as file:
     expenses = sorted(list(map(int, file.readlines())))
 
 for e1 in expenses:

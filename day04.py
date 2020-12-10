@@ -11,7 +11,7 @@ import re
 required_field = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
 
 # Loading of file
-with open("input/day4.txt") as file:
+with open("input/day04.txt") as file:
     # Putting all passports on 1 line
     passports = re.sub(r"(\w)\n(\w)", r"\1 \2", file.read())
     passports = re.sub(r"^\n", "", passports, flags=re.MULTILINE)

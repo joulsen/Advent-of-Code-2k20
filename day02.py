@@ -8,7 +8,7 @@ Created on Sat Dec  5 15:37:53 2020
 import re
 parser = re.compile(r"(\d+)-(\d+) (\w): (\w+)")
 
-with open("input/day2.txt") as file:
+with open("input/day02.txt") as file:
     database = parser.findall(file.read())
 
 
