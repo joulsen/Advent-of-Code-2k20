@@ -22,5 +22,5 @@ def part2():
 
 
 # Printing results
-print("Answer to AoC day 5 part 1 is: {}".format(part1()))
-print("Answer to AoC day 5 part 2 is: {}".format(part2()))
+print("Answer to AoC day 6 part 1 is: {}".format(part1()))
+print("Answer to AoC day 6 part 2 is: {}".format(part2()))
