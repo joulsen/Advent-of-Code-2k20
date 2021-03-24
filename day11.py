@@ -14,7 +14,6 @@ def iteration(layout, infinite_los=False):
     for y in range(len(layout)):
         new_row = ""
         for x in range(len(layout[0])):
-            # print(layout[y][x])
             if layout[y][x] == ".":
                 new_row += "."
             else:
@@ -50,15 +49,14 @@ def iteration(layout, infinite_los=False):
         new_layout.append(new_row)
     return new_layout, layout == new_layout
 
-layout1 = layout.copy()
-layout2 = layout.copy()
-while True:
-    layout1, identical = iteration(layout1, False)
-    if identical:
-        print(sum([row.count("#") for row in layout1]))
-        break
-while True:
-    layout2, identical = iteration(layout2, True)
-    if identical:
-        print(sum([row.count("#") for row in layout2]))
-        break
+
+def repeat(layout, infinite_los):
+    while True:
+        layout, identical = iteration(layout, infinite_los)
+        if identical:
+            return sum([row.count("#") for row in layout])
+
+
+# Printing results
+print("Answer to AoC day 11 part 1 is: {}".format(repeat(layout, False)))
+print("Answer to AoC day 11 part 1 is: {}".format(repeat(layout, True)))
