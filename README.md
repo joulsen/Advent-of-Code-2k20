@@ -16,6 +16,7 @@ So far the following days have been completed:
 |  10 | Done   | Done   |
 |  11 | Done   | Done   |
 |  12 | Done   | Done   |
-|  13 | Soon   | Soon   |
+|  13 | Done | Done |
+| 14 | Done | Done |
 
 If you are interested, check out my entries for [AOC2018](https://github.com/supercigar/Advent-of-Code-2k18) which is also written in Python3.
