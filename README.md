@@ -12,7 +12,7 @@ So far the following days have been completed:
 |   6 | Done   | Done   |
 |   7 | Done   | Done   |
 |   8 | Done   | Done   |
-|   9 | Yet to be uploaded   | Yet to be uploaded   |
+|   9 | Done | Done |
 |  10 | Done   | Done   |
 |  11 | Done   | Done   |
 |  12 | Done   | Done   |
