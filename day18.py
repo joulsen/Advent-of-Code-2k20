@@ -7,7 +7,10 @@ Created on Thu Jun 30 17:23:30 2022
 
 with open("input/day18.txt") as file:
     homework = file.read().replace(" ", "").split('\n')[:-1]
-    
+
+
+# Conversion to postfix notation using infix-to-postfix algorithm
+# Visit previous git commit for non-condensed function
 def get_postfix(infix, presedence):
     stack = []
     postfix = []
@@ -18,26 +21,14 @@ def get_postfix(infix, presedence):
             while postfix[-1] != "(":
                 stack += postfix.pop()
             postfix.pop()
-        elif (char in "*+") and (not presedence):
-            try:
-                if postfix[-1] in "*+":
-                    stack += postfix.pop()
-            except IndexError:
-                pass
-            postfix += char
-        elif char == "+":
-            try:
-                if postfix[-1] == "+":
-                    stack += postfix.pop()
-            except IndexError:
-                pass
-            postfix += char
-        elif char == "*":
-            try:
-                if postfix[-1] in "*+":
-                    stack += postfix.pop()
-            except IndexError:
-                pass
+        elif char in "*+":
+            if postfix:
+                if (not presedence) or char == "*":
+                    if postfix[-1] in "*+":
+                        stack += postfix.pop()
+                elif char == "+":
+                        if postfix[-1] == "+":
+                            stack += postfix.pop()
             postfix += char
         else:
             stack += char
@@ -45,6 +36,8 @@ def get_postfix(infix, presedence):
         stack += postfix.pop()
     return stack
 
+
+# Simple evaluation of postfix expression using stack
 def evaluate_postfix(postfix):
     stack = []
     for char in postfix:
@@ -55,6 +48,7 @@ def evaluate_postfix(postfix):
         else:
             stack.append(int(char))
     return stack[0]
+
 
 part1 = sum([evaluate_postfix(get_postfix(l, False)) for l in homework])
 part2 = sum([evaluate_postfix(get_postfix(l, True)) for l in homework])
